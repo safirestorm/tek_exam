@@ -1,4 +1,4 @@
-name: CI
+name: ci.yml
 
 on:
   push:
@@ -7,12 +7,10 @@ on:
   pull_request:
     branches:
       - main
-  workflow_dispatch:
 
 jobs:
   java-test:
     uses: ./.github/workflows/java-test.yml
 
   docker-ci:
-    needs: java-test
     uses: ./.github/workflows/docker-ci.yml
